@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+
+    <header>
+        <h1><img src="img/top-img.png" width="100%"></h1>
+    </header>
+
+    <main>
+
+        <div class="text1">じゃんけん<br>
+            何を出すか選んでね！</div>
+        <ul>
+            <li id="gu_btn"><img src="img/2.png" width="30%"></li>
+            <li id="cho_btn"><img src="img/1.png" width="30%"></li>
+            <li id="par_btn"><img src="img/3.png" width="30%"></li>
+        </ul>
+      
+        <div id="judgment"></div>
+    </main>
+
+    <footer></footer>
+    <script>
+   $("#gu_btn").on("click",function(){
+    //1.乱数（１から3）
+    const r = Math.ceil( Math.random()*3 );
+    //2.if分岐処理
+    let view = "";
+    if(r==1){
+        view = '<img src="img/gu.png" width="30%"><br>あいこだよ';
+    }
+    if(r==2){
+        view = '<img src="img/par.png" width="30%"><br>あなたの勝ち';
+    }
+    if(r==3){
+        view = '<img src="img/choki.png" width="30%"><br>あなたの負け';
+    }
+    //3.表示処理
+    $("#judgment").html(view)
+});
+
+$("#cho_btn").on("click",function(){
+    //1.乱数（１から3）
+    const r = Math.ceil( Math.random()*3 );
+    //2.if分岐処理
+    let view = "";
+    if(r==1){
+        view = '<img src="img/gu.png" width="30%"><br>あなたの勝ち';
+    }
+    if(r==2){
+        view = '<img src="img/par.png" width="30%"><br>あなたの負け';
+    }
+    if(r==3){
+        view = '<img src="img/choki.png" width="30%"><br>あいこだよ';
+    }
+    //3.表示処理
+    $("#judgment").html(view)
+});
+  
+
+
+$("#par_btn").on("click",function(){
+    //1.乱数（１から3）
+    const r = Math.ceil( Math.random()*3 );
+    //2.if分岐処理
+    let view = "";
+    if(r==1){
+        view = '<img src="img/gu.png" width="30%"><br>あなたの負け';
+    }
+    if(r==2){
+        view = '<img src="img/par.png" width="30%"><br>あいこだよ';
+    }
+    if(r==3){
+        view = '<img src="img/choki.png" width="30%"><br>あなたの勝ち';
+    }
+    //3.表示処理
+    $("#judgment").html(view)
+});
+  
+
+   
+    </script>
+</body>
+
+</html>
